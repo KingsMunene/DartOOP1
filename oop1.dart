@@ -27,15 +27,28 @@ class  Dog extends Animal {
 
   Dog(this.food, this.habitat, this.name);
 
+// Defines a factory constructor for the Dog class that takes a file path as a parameter.
+  // This constructor reads the contents of the file at the given path and creates a new Dog instance based on the file contents.
   factory Dog.fromFile(String filePath){
+    // Creates a new File object for the given file path.
     final file = File(filePath);
+
+    // Reads the contents of the file as a list of lines and stores the result in the 'lines' variable.
     final lines = file.readAsLinesSync();
 
+// Checks if the file contains at least two lines.
     if(lines.length >= 2){
+
+       // Extracts the food value from the first line of the file.
       final food = lines[0];
+
+      // Extracts the habitat value from the second line of the file.
       final habitat = lines[1];
+
+      // Extracts the name value from the third line of the file.
       final name = lines[2];
 
+// Creates a new Dog instance with the extracted food, habitat, and name values, and returns it.
       return Dog(food, habitat, name);
     }else {
       throw Exception('Invalid file format');
