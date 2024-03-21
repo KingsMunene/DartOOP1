@@ -57,7 +57,7 @@ class  Dog extends Animal {
 
   @override
   void eat() {
-    print("The Dog is eating $food");
+    print("$name is eating $food");
   }
 
   @override
@@ -92,6 +92,7 @@ void main(List<String> args) {
   for (dog in dogs) {
     print("Dog name: ${dog.name}");
     dog.roaming();
+    dog.eat();
     dog.makeNoise();
     print(" ");
   }
