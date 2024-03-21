@@ -43,5 +43,5 @@ void main(List<String> args) {
   var dog = Dog("Meet", "Kennel");
 
   dog.makeNoise();
-  dog.Roaming();
+  dog.roaming();
 }
